@@ -16,6 +16,6 @@ public class ModStatusEffects {
     }
 
     public static void registerEffects() {
-        MushrooomsMod.LOGGER.info("Starting Effects");
+        MushrooomsMod.LOGGER.info("|\t-Registering Status Effects");
     }
 }
