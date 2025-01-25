@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -14,6 +15,7 @@ import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.GolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -71,7 +73,7 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
         this.targetSelector.add(4, new UniversalAngerGoal<CrystalGolemEntity>(this, false));
     }
 
-    public static DefaultAttributeContainer.Builder createCrystalGolemAttributes() {
+    public static DefaultAttributeContainer.Builder setAttributes() {
         return GolemEntity.createLivingAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2f)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 70.0f)
                 .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 2.5)
@@ -121,8 +123,13 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
         super.tickMovement();
     }
 
-    //TODO
-    //make the golem invulnerable to arrows
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (source.getSource() instanceof PersistentProjectileEntity && this.random.nextInt(2) == 0) {
+            return false;
+        }
+        return super.damage(source, amount);
+    }
 
     private boolean attack() {
         Box boundingBox = this.getBoundingBox().expand(5);
