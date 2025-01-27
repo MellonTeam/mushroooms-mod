@@ -72,6 +72,15 @@ public class ModCaveRegion extends Region {
                 .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.FOREST_CAVE));
 
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(MultiNoiseUtil.ParameterRange.of(-1F, 0.5F))
+                .humidity(MultiNoiseUtil.ParameterRange.of(-1F, 0F))
+                .continentalness(MultiNoiseUtil.ParameterRange.of(0F, 1F))
+                .erosion(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
+                .depth(MultiNoiseUtil.ParameterRange.of(0.2F, 1.1F))
+                .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 1f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.ROCKY_CAVE));
+
         builder.build().forEach(mapper);
     }
 }

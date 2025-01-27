@@ -24,6 +24,8 @@ public class ModOverworldBiomes {
     public static final RegistryKey<Biome> VANILLA_SHROOM_CAVE = registerBiome("vanilla_schroom_cave");
     public static final RegistryKey<Biome> CRYSTAL_CAVE = registerBiome("crystal_cave");
     public static final RegistryKey<Biome> FOREST_CAVE = registerBiome("forest_cave");
+    public static final RegistryKey<Biome> ROCKY_CAVE = registerBiome("rocky_cave");
+    public static final RegistryKey<Biome> MOSSY_ROCKY_CAVE = registerBiome("mossy_rocky_cave");
 
     public static void bootstrap(Registerable<Biome> context) {
         //Surface
@@ -40,6 +42,8 @@ public class ModOverworldBiomes {
         context.register(VANILLA_SHROOM_CAVE, ModOverworldBiomeCreator.UnderGroundBiomes.createVanillaSchroomCave(context));
         context.register(CRYSTAL_CAVE, ModOverworldBiomeCreator.UnderGroundBiomes.createCrystalCave(context));
         context.register(FOREST_CAVE, ModOverworldBiomeCreator.UnderGroundBiomes.createForestCave(context));
+        context.register(ROCKY_CAVE, ModOverworldBiomeCreator.UnderGroundBiomes.createRockyCave(context));
+        context.register(MOSSY_ROCKY_CAVE, ModOverworldBiomeCreator.UnderGroundBiomes.createRockyCave(context));
     }
 
     public static RegistryKey<Biome> registerBiome(String id) {

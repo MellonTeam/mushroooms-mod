@@ -319,6 +319,62 @@ public class ModOverworldBiomeCreator {
                     .build();
         }
 
+        public static Biome createRockyCave(Registerable<Biome> context) {
+            SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
+
+            GenerationSettings.LookupBackedBuilder biomeBuilder =
+                    new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
+                            context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
+
+            ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
+            DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+
+            ModBiomeFeatures.UndergroundBiome.addRockyCaveFeatures(biomeBuilder);
+
+            return new Biome.Builder()
+                    .precipitation(true)
+                    .downfall(0.3f)
+                    .temperature(0.5f)
+                    .generationSettings(biomeBuilder.build())
+                    .spawnSettings(spawnBuilder.build())
+                    .effects((new BiomeEffects.Builder())
+                            .waterColor(4159204)
+                            .waterFogColor(329011)
+                            .skyColor(0x18A4E6)
+                            .fogColor(0x7BC5E8)
+                            .build())
+                    .build();
+        }
+
+        public static Biome createMossyRockyCave(Registerable<Biome> context) {
+            SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
+
+            GenerationSettings.LookupBackedBuilder biomeBuilder =
+                    new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
+                            context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
+
+            ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
+            DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+
+            ModBiomeFeatures.UndergroundBiome.addMossyRockyCaveFeatures(biomeBuilder);
+
+            return new Biome.Builder()
+                    .precipitation(true)
+                    .downfall(0.3f)
+                    .temperature(0.5f)
+                    .generationSettings(biomeBuilder.build())
+                    .spawnSettings(spawnBuilder.build())
+                    .effects((new BiomeEffects.Builder())
+                            .waterColor(4159204)
+                            .waterFogColor(329011)
+                            .skyColor(0x18A4E6)
+                            .fogColor(0x7BC5E8)
+                            .build())
+                    .build();
+        }
+
+
+
         public static Biome createBlueLuminescentShroomCave(Registerable<Biome> context) {
             SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
