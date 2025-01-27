@@ -160,6 +160,11 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     //terrain
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAKURA_ARCH_KEY = registerKey("sakura_arch_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAKURA_ROCK_STRAIGHT_KEY = registerKey("sakura_rock_straight_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ROCKY_STALACTITE_KEY = registerKey("rocky_stalactite_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MOSSY_STALACTITE_KEY = registerKey("mossy_stalactite_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> HUGE_STALACTITE_KEY = registerKey("huge_stalactite_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> TINY_PUDDLE_KEY = registerKey("tiny_puddle_key");
+
     public static final RegistryKey<ConfiguredFeature<?, ?>> SPIRAL_MUSHROOM_KEY = registerKey("spiral_mushroom_key");
 
     //Dev
@@ -324,7 +329,11 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         //terrain
         register(context, SAKURA_ARCH_KEY, ModFeatures.ARCH, new ArchConfig(10, 3, 60, 30, 30, 30, 30));
         register(context, SAKURA_ROCK_STRAIGHT_KEY, ModFeatures.SAKURA_ROCK_STRAIGHT, new DefaultFeatureConfig());
+        register(context, ROCKY_STALACTITE_KEY, ModFeatures.ROCKY_STALACTITE, new StalactiteFeatureConfig(52));
+        register(context, MOSSY_STALACTITE_KEY, ModFeatures.MOSSY_STALACTITE, new StalactiteFeatureConfig(39));
+        register(context, HUGE_STALACTITE_KEY, ModFeatures.HUGE_STALACTITE, new DefaultFeatureConfig());
         register(context, SPIRAL_MUSHROOM_KEY, ModFeatures.SPIRAL_MUSHROOM, new DefaultFeatureConfig());
+        register(context, TINY_PUDDLE_KEY, ModFeatures.TINY_PUDDLE, new DefaultFeatureConfig());
 
         //Dev
         register(context, FEATURE_TESTER_KEY, ModFeatures.FEATURE_TESTER, new ModSimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.REDSTONE_BLOCK)));
