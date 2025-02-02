@@ -19,10 +19,10 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModDecoratorTypes;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModFoliagePlacerTypes;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
+import net.rodofire.mushrooomsmod.world.features.placedfeatures.placementmodifier.ModPlacementModifierType;
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import software.bernie.geckolib.GeckoLib;
 
 public class MushrooomsMod implements ModInitializer {
 
@@ -61,6 +61,7 @@ public class MushrooomsMod implements ModInitializer {
         ModDecoratorTypes.registerDecorators();
         ModWorldGeneration.registerModWorldGen();
         ModFeatures.registerFeatures();
+        ModPlacementModifierType.registerPlacementModifiers();
 
 
         LOGGER.info("-[Misc] Initializing :");
