@@ -34,6 +34,7 @@ public class ModUndergroundPlacedFeatures {
     //Mushrooms Flowers
     public static final RegistryKey<PlacedFeature> MUSHROOM_SIDE_BLUE_LUMINESCENT_KEY = registerKey("mushroom_side_blue_luminescent_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_RED_KEY = registerKey("mushroom_small_red_key");
+    public static final RegistryKey<PlacedFeature> MUSHROOM_YELLOW_KEY = registerKey("mushroom_yellow_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_BROWN_KEY = registerKey("mushroom_small_brown_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_DEATH_TRUMPET_KEY = registerKey("mushroom_death_trumpet_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_FERTILE_RED_FLOWER_KEY = registerKey("mushroom_fertile_red_flower_key");
@@ -62,10 +63,13 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> RAPANGE_FLOWERS_KEY = registerKey("rapange_flowers_key");
     public static final RegistryKey<PlacedFeature> FLEUR_BERRIES_KEY = registerKey("fleur_berries_key");
     public static final RegistryKey<PlacedFeature> YELICE_KEY = registerKey("yelice_key");
+    public static final RegistryKey<PlacedFeature> DEEP_YELICE_KEY = registerKey("deep_yelice_key");
 
     //Grass
     public static final RegistryKey<PlacedFeature> TINY_GRASS_KEY = registerKey("tiny_grass_key");
     public static final RegistryKey<PlacedFeature> GRASS_KEY = registerKey("grass_key");
+    public static final RegistryKey<PlacedFeature> DEEP_GRASS_KEY = registerKey("deep_grass_key");
+    public static final RegistryKey<PlacedFeature> DEEP_TALL_GRASS_KEY = registerKey("deep_tall_grass_key");
     public static final RegistryKey<PlacedFeature> GRASS_BLUE_LUMINESCENT_KEY = registerKey("grass_blue_luminescent_key");
     public static final RegistryKey<PlacedFeature> TALL_GRASS_BLUE_LUMINESCENT_KEY = registerKey("tall_grass_blue_luminescent_key");
 
@@ -74,6 +78,11 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_VINES_DOWN_KEY = registerKey("blue_luminescent_vines_down_key");
     public static final RegistryKey<PlacedFeature> HANGING_ROOTS_KEY = registerKey("hanging_roots_key");
     public static final RegistryKey<PlacedFeature> GLOW_LICHEN_KEY = registerKey("glow_lichen_key");
+    public static final RegistryKey<PlacedFeature> VINES_KEY = registerKey("vines_key");
+
+    //bushes
+    public static final RegistryKey<PlacedFeature> CAVE_BUSH = registerKey("cave_bush");
+    public static final RegistryKey<PlacedFeature> CAVE_TOP_BUSH = registerKey("cave_top_bush");
 
     //Crystal
     public static final RegistryKey<PlacedFeature> RED_CRYSTAL_KEY = registerKey("red_crystal_key");
@@ -102,6 +111,7 @@ public class ModUndergroundPlacedFeatures {
         register(context, BLUE_LUMINESCENT_MUSHROOM_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_KEY), CountPlacementModifier.of(20), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, MUSHROOM_SMALL_BROWN_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_BROWN_KEY), CountPlacementModifier.of(50), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, MUSHROOM_SMALL_RED_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_RED_KEY), CountPlacementModifier.of(50), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, MUSHROOM_YELLOW_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.YELLOW_MUSHROOM_KEY), CountPlacementModifier.of(50), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
         register(context, MUSHROOM_DEATH_TRUMPET_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_RED_KEY), CountPlacementModifier.of(60), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, BROWN_MUSHROOM_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.BROWN_MUSHROOM_KEY), CountPlacementModifier.of(33), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, RED_MUSHROOM_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.RED_MUSHROOM_KEY), CountPlacementModifier.of(33), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
@@ -125,9 +135,12 @@ public class ModUndergroundPlacedFeatures {
         register(context, RAPANGE_FLOWERS_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.RAPANGE_FLOWERS_KEY), CountPlacementModifier.of(24), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, FLEUR_BERRIES_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.FLEUR_BERRIES_KEY), CountPlacementModifier.of(14), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, YELICE_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.YELICE_KEY), CountPlacementModifier.of(25), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, DEEP_YELICE_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.YELICE_KEY), CountPlacementModifier.of(55), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
 
         //Grass
         register(context, GRASS_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.GRASS_KEY), CountPlacementModifier.of(45), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, DEEP_GRASS_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.DENSE_GRASS_KEY), CountPlacementModifier.of(160), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+        register(context, DEEP_TALL_GRASS_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.DENSE_TALL_GRASS_KEY), CountPlacementModifier.of(160), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
         register(context, TINY_GRASS_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.TINY_GRASSS_KEY), CountPlacementModifier.of(14), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, GRASS_BLUE_LUMINESCENT_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.GRASS_BLUE_LUMINESCENT_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, TALL_GRASS_BLUE_LUMINESCENT_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.TALL_GRASS_BLUE_LUMINESCENT_KEY), CountPlacementModifier.of(7), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
@@ -136,7 +149,13 @@ public class ModUndergroundPlacedFeatures {
         register(context, BLUE_LUMINESCENT_VINES_UP_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_UP_KEY), CountPlacementModifier.of(9), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, BLUE_LUMINESCENT_VINES_DOWN_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_DOWN_KEY), CountPlacementModifier.of(7), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, HANGING_ROOTS_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.HANGING_ROOT_KEY), CountPlacementModifier.of(80), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
-        register(context, GLOW_LICHEN_KEY, registererFeature.getOrThrow(UndergroundConfiguredFeatures.GLOW_LICHEN), CountPlacementModifier.of(85), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+        register(context, GLOW_LICHEN_KEY, registererFeature.getOrThrow(UndergroundConfiguredFeatures.GLOW_LICHEN), CountPlacementModifier.of(130), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+        register(context, VINES_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.VINES_KEY), CountPlacementModifier.of(230), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+
+        //bushes
+        register(context, CAVE_BUSH, registererFeature.getOrThrow(ModConfiguredFeatures.CAVE_BUSH_KEY), CountPlacementModifier.of(50), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+        register(context, CAVE_TOP_BUSH, registererFeature.getOrThrow(ModConfiguredFeatures.CAVE_TOP_BUSH_KEY), CountPlacementModifier.of(20), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+
 
         //Huge Mushrooms
         register(context, BLUE_LUMINESCENT_MUSHROOM_TREE_KEY, registererFeature.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_KEY), CountPlacementModifier.of(140), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
