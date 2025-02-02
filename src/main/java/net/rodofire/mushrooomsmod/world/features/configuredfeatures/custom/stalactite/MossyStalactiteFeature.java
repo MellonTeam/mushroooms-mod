@@ -18,6 +18,6 @@ public class MossyStalactiteFeature extends AbstractStalactiteFeature{
 
     @Override
     protected Block[] getTopBlock() {
-        return TagUtil.BlockTags.convertBlockTagToBlockArray(ModTags.Blocks.MOSSY_STALACTITE_BASE);
+        return random.nextFloat() < 0.6f ? TagUtil.BlockTags.convertBlockTagToBlockArray(ModTags.Blocks.MOSSY_STALACTITE_BASE) : TagUtil.BlockTags.convertBlockTagToBlockArray(ModTags.Blocks.MOSSY_STALACTITE_TOP);
     }
 }

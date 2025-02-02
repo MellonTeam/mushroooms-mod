@@ -29,12 +29,12 @@ public abstract class AbstractStalactiteFeature extends Feature<StalactiteFeatur
 
     @Override
     public boolean generate(FeatureContext<StalactiteFeatureConfig> context) {
-        base = getBaseBlock();
-        top = getTopBlock();
         world = context.getWorld();
         random = context.getRandom();
         pos = context.getOrigin();
         int tries = context.getConfig().tries();
+        base = getBaseBlock();
+        top = getTopBlock();
 
         for (int i = 0; i < tries; i++) {
             BlockPos secondPos = pos.add(random.nextBetween(-15, 15), random.nextBetween(-25, 25), random.nextBetween(-15, 15));
