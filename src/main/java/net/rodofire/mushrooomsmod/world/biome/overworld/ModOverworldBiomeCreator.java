@@ -13,7 +13,7 @@ import net.rodofire.mushrooomsmod.world.biome.ModBiomeFeatures;
 
 public class ModOverworldBiomeCreator {
     static class SurFaceBiomes {
-        public static Biome createShroomIsland1(Registerable<Biome> context) {
+        public static Biome createMushroomShire(Registerable<Biome> context) {
             SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
 
@@ -26,7 +26,7 @@ public class ModOverworldBiomeCreator {
             ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
             DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
 
-            ModBiomeFeatures.SurfaceBiomes.addSchroomIsland1Features(biomeBuilder);
+            ModBiomeFeatures.SurfaceBiomes.addMushroomShireFeatures(biomeBuilder);
 
             return new Biome.Builder()
                     .precipitation(true)
@@ -63,7 +63,7 @@ public class ModOverworldBiomeCreator {
 
             biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
 
-            ModBiomeFeatures.SurfaceBiomes.addSchroomIsland1Features(biomeBuilder);
+            ModBiomeFeatures.SurfaceBiomes.addMushroomShireFeatures(biomeBuilder);
 
             return new Biome.Builder()
                     .precipitation(true)
@@ -346,7 +346,7 @@ public class ModOverworldBiomeCreator {
                     .build();
         }
 
-        public static Biome createMossyRockyCave(Registerable<Biome> context) {
+        public static Biome createMossyCave(Registerable<Biome> context) {
             SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
             GenerationSettings.LookupBackedBuilder biomeBuilder =
@@ -356,12 +356,12 @@ public class ModOverworldBiomeCreator {
             ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
             DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
 
-            ModBiomeFeatures.UndergroundBiome.addMossyRockyCaveFeatures(biomeBuilder);
+            ModBiomeFeatures.UndergroundBiome.addMossyCaveFeatures(biomeBuilder);
 
             return new Biome.Builder()
                     .precipitation(true)
-                    .downfall(0.3f)
-                    .temperature(0.5f)
+                    .downfall(0.9f)
+                    .temperature(0.95f)
                     .generationSettings(biomeBuilder.build())
                     .spawnSettings(spawnBuilder.build())
                     .effects((new BiomeEffects.Builder())
