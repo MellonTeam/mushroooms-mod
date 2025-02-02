@@ -14,6 +14,8 @@ import terrablender.api.VanillaParameterOverlayBuilder;
 import java.util.function.Consumer;
 
 public class ModOverworldRegion extends Region {
+    private VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
+
     public ModOverworldRegion(Identifier name, int weight) {
         super(name, RegionType.OVERWORLD, weight);
     }
@@ -21,14 +23,13 @@ public class ModOverworldRegion extends Region {
     //https://mcreator.net/wiki/vanilla-biome-settings-data-list
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
         //Sakura Plain
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.NEUTRAL)
                 .humidity(ParameterUtils.Humidity.HUMID)
                 .continentalness(ParameterUtils.Continentalness.MID_INLAND)
                 .erosion(ParameterUtils.Erosion.EROSION_6)
-                                .depth(ParameterUtils.Depth.SURFACE)
+                .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING)
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.SAKURA_FOREST));
 
@@ -84,4 +85,5 @@ public class ModOverworldRegion extends Region {
 
         builder.build().forEach(mapper);
     }
+
 }

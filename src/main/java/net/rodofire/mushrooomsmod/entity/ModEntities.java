@@ -45,7 +45,7 @@ public class ModEntities {
     }
 
     public static void registerModENtities() {
-        MushrooomsMod.LOGGER.info("|\tRegistering Entities.");
+        MushrooomsMod.LOGGER.info("|\t-Registering Entities.");
     }
 
     public static void spawnRestriction() {
