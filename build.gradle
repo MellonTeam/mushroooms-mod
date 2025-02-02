@@ -144,7 +144,6 @@ publishMods {
 		}
 		projectId = "hxHbPoS6"
 		requires("fabric-api")
-		requires("cloth-config")
 		requires("terrablender")
 		requires("geckolib")
 		requires("ewc")
