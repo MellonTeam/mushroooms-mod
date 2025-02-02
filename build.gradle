@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.7-SNAPSHOT'
+	id 'fabric-loom' version '1.9-SNAPSHOT'
 	id 'maven-publish'
 	id "me.modmuss50.mod-publish-plugin" version "0.8.1"
 }
@@ -75,18 +75,13 @@ dependencies {
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.21:4.5.6'
 
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:16.0.729"
-	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:16.0.729"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:16.0.788"
+	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:16.0.788"
 
-	modApi("me.shedaniel.cloth:cloth-config-fabric:15.0.127"){
-		exclude(group: "net.fabricmc.fabric-api")
-	}
 	modApi "dev.architectury:architectury-fabric:13.0.3"
 
-
-	modImplementation 'maven.modrinth:ewc:2.3.4-1.21'
-
-
+	modImplementation 'maven.modrinth:ewc:2.4.9-1.21.1'
+	modImplementation 'maven.modrinth:worldgen-devtools:1.1.0+1.21.1'
 	modApi "com.terraformersmc:modmenu:11.0.1"
 
 }
