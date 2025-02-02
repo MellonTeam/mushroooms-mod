@@ -128,7 +128,7 @@ publishMods {
 			end = "1.21.1"
 		}
 		projectId = "955698"
-		javaVersions.add(JavaVersion.VERSION_17)
+		javaVersions.add(JavaVersion.VERSION_21)
 		serverRequired = true
 		clientRequired = true
 		requires("fabric-api")
